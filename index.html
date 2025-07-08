@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Registration</title>
+</head>
+<body>
+    <h2>Register New Employee</h2>
+    <form method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Designation:</label><br>
+        <input type="text" name="designation" required><br><br>
+
+        <label>Department:</label><br>
+        <input type="text" name="department" required><br><br>
+
+        <input type="submit" value="Add Employee">
+    </form>
+
+    <hr>
+    <h2>Registered Employees</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Serial No</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Department</th>
+        </tr>
+        {% for emp in employees %}
+        <tr>
+            <td>{{ emp[0] }}</td>
+            <td>{{ emp[1] }}</td>
+            <td>{{ emp[2] }}</td>
+            <td>{{ emp[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
